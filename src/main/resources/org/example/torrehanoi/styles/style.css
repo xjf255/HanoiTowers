@@ -2,7 +2,7 @@
     -fx-background-color: #0D1821;
 }
 
-Label{
+Label {
     -fx-text-fill: #D9D9D9;
     -fx-font-size: 16;
 }
@@ -20,7 +20,7 @@ Label{
     -fx-padding: 10 20;
 }
 
-.btn__settings{
+.btn__settings {
     -fx-border-radius: 9999px;
 }
 
@@ -37,13 +37,13 @@ Label{
     -fx-pref-width: 600px;
 }
 
-.special__text{
+.special__text {
     -fx-font-weight: 400;
     -fx-font-family: C059;
     -fx-text-fill: #377F86;
 }
 
-.body{
+.body {
     -fx-pref-width: 500px;
     -fx-pref-height: 700px;
     -fx-border-radius: 20;
@@ -51,7 +51,7 @@ Label{
     -fx-background-color: #fff;
 }
 
-.modal{;
+.modal {;
     -fx-background-color: #D9D9D9;
 }
 
@@ -63,7 +63,7 @@ Label{
     -fx-orientation: vertical;
 }
 
-.modal__body Label{
+.modal__body Label {
     -fx-text-fill: #0D1821;
 }
 

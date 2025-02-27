@@ -17,12 +17,12 @@
         <children>
             <!-- Celda para Torres -->
             <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" spacing="4">
-                <Label text="Torres:" />
+                <Label text="Torres:"/>
                 <TextField fx:id="towerField" promptText="Ingrese su número de Torres"/>
             </VBox>
             <!-- Celda para Discos -->
             <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="4">
-                <Label text="Discos:" />
+                <Label text="Discos:"/>
                 <TextField fx:id="diskField" promptText="Ingrese su número de Discos"/>
             </VBox>
             <!-- Celda para el Botón -->

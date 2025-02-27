@@ -24,7 +24,7 @@
                     <Button onAction="#onShowModalClick" styleClass="btn__settings">
                         <graphic>
                             <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
-                                <Image url="@imagenes/settings-svgrepo-com.png" />
+                                <Image url="@imagenes/settings-svgrepo-com.png"/>
                             </ImageView>
                         </graphic>
                     </Button>

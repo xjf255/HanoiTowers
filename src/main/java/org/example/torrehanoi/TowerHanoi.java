@@ -43,7 +43,9 @@ public class TowerHanoi {
 
     public void autoResolve() {
         if (numTowers >= 3) {
-            solveHanoiGeneralized(numDisc, 0, numTowers - 1, 1);
+            new Thread(() -> {
+                solveHanoiGeneralized(numDisc, 0, numTowers - 1, 1);
+            }).start();
         } else {
             System.out.println("La resolución automática requiere al menos 3 torres.");
         }
@@ -56,7 +58,7 @@ public class TowerHanoi {
         }
 
         if (numTowers > 3) {
-            int k = n / 2;
+            int k = n - 1;
             solveHanoiGeneralized(k, from, aux, to);
             solveHanoiGeneralized(n - k, from, to, aux);
             solveHanoiGeneralized(k, aux, to, from);
@@ -68,11 +70,22 @@ public class TowerHanoi {
     }
 
     private void moveDisc(int from, int to) {
-        if (!towers.get(from).isEmpty()) {
-            Disc disc = towers.get(from).pop();
-            towers.get(to).push(disc);
-            System.out.println("Moviendo disco " + disc.getValue() + " de Torre " + from + " a Torre " + to);
-            Platform.runLater(() -> homeController.updateGame(getTowers()));
+        synchronized (towers) {
+            if (!towers.get(from).isEmpty()) {
+                Disc disc = towers.get(from).pop();
+                boolean isMovedDisc = towers.get(to).push(disc);
+                if (!isMovedDisc) {
+                    towers.get(from).push(disc);
+                    return;
+                }
+                System.out.println("Moviendo disco " + disc.getValue() + " de Torre " + from + " a Torre " + to);
+                Platform.runLater(() -> homeController.updateGame(getTowers()));
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -85,7 +98,7 @@ public class TowerHanoi {
     }
 
     public List<Tower> getTowers() {
-        return new ArrayList<>(towers);
+        return towers;
     }
 
     public void setTowers(List<Tower> towers) {

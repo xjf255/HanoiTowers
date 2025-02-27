@@ -6,7 +6,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class ModalSettingsController {
         List<Integer> values = getValues();
         if (values != null) {
             // send new values to canvas
-            if(homeController != null) {
+            if (homeController != null) {
                 homeController.updateGame(values.get(0), values.get(1));
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

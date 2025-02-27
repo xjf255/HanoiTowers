@@ -3,9 +3,8 @@ package org.example.torrehanoi;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Stack;
 
-public class Tower extends Stack<Disc> {
+public class Tower implements Iterable<Disc> {
     private List<Disc> discs;
 
     public Tower() {
@@ -21,13 +20,13 @@ public class Tower extends Stack<Disc> {
         return discs.size();
     }
 
-    public Disc push(Disc newDisc) {
+    public boolean push(Disc newDisc) {
         if (this.isEmpty() || newDisc.getValue() < this.getValue()) {
             discs.add(newDisc);
+            return true;
         } else {
-            throw new IllegalArgumentException("No se puede colocar un disco más grande sobre uno más pequeño.");
+            return false;
         }
-        return newDisc;
     }
 
     public boolean isEmpty() {

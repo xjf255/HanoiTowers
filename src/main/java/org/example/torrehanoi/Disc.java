@@ -3,7 +3,8 @@ package org.example.torrehanoi;
 public class Disc {
     private Integer value;
 
-    public Disc() {}
+    public Disc() {
+    }
 
     public Disc(Integer value) {
         if (value == null || value <= 0) {
