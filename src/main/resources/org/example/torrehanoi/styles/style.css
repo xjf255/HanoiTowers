@@ -1,0 +1,74 @@
+.root {
+    -fx-background-color: #0D1821;
+}
+
+Label{
+    -fx-text-fill: #D9D9D9;
+    -fx-font-size: 16;
+}
+
+.title {
+    -fx-font-size: 30;
+    -fx-font-weight: 700;
+}
+
+.btn {
+    -fx-cursor: hand;
+    -fx-background-color: #3d3d3d;
+    -fx-text-fill: #D9D9D9;
+    -fx-border-radius: 5;
+    -fx-padding: 10 20;
+}
+
+.btn__settings{
+    -fx-border-radius: 9999px;
+}
+
+.btn:hover {
+    -fx-background-color: #716f6f;
+}
+
+.main {
+    -fx-padding: 10;
+    -fx-pref-width: 600px;
+}
+
+.header {
+    -fx-pref-width: 600px;
+}
+
+.special__text{
+    -fx-font-weight: 400;
+    -fx-font-family: C059;
+    -fx-text-fill: #377F86;
+}
+
+.body{
+    -fx-pref-width: 500px;
+    -fx-pref-height: 700px;
+    -fx-border-radius: 20;
+    -fx-padding: 20;
+    -fx-background-color: #fff;
+}
+
+.modal{;
+    -fx-background-color: #D9D9D9;
+}
+
+.modal__body {
+    -fx-padding: 20;
+    -fx-hgap: 20;
+    -fx-vgap: 10;
+    -fx-column-halignment: center;
+    -fx-orientation: vertical;
+}
+
+.modal__body Label{
+    -fx-text-fill: #0D1821;
+}
+
+.modal__body TextField {
+    -fx-min-width: 200;
+    -fx-padding: 6;
+    -fx-border-radius: 6;
+}

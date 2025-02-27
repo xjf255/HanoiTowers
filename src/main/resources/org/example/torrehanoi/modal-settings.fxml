@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@styles/style.css"
+            fx:controller="org.example.torrehanoi.ModalSettingsController"
+            prefHeight="400.0" prefWidth="600.0"
+            styleClass="modal">
+    <GridPane styleClass="modal__body">
+        <children>
+            <!-- Celda para Torres -->
+            <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" spacing="4">
+                <Label text="Torres:" />
+                <TextField fx:id="towerField" promptText="Ingrese su número de Torres"/>
+            </VBox>
+            <!-- Celda para Discos -->
+            <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="4">
+                <Label text="Discos:" />
+                <TextField fx:id="diskField" promptText="Ingrese su número de Discos"/>
+            </VBox>
+            <!-- Celda para el Botón -->
+            <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" spacing="4">
+                <Button styleClass="btn" text="Guardar" onAction="#onSaveButtonClick"/>
+            </VBox>
+        </children>
+    </GridPane>
+</AnchorPane>

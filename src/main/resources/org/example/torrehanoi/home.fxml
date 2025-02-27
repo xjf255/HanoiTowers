@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane styleClass="root" xmlns="http://javafx.com/javafx"
+            stylesheets="@styles/style.css"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.torrehanoi.HomeController"
+            prefHeight="400.0" prefWidth="600.0">
+    <GridPane styleClass="main" vgap="20">
+        <children>
+            <VBox styleClass="header" GridPane.rowIndex="0" GridPane.columnIndex="0" spacing="20">
+                <HBox alignment="CENTER">
+                    <Button text="AutoResolve" onAction="#onAutoResolveClick"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label styleClass="special__text" text="Change properties -->"/>
+                    <Button onAction="#onShowModalClick" styleClass="btn__settings">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <Image url="@imagenes/settings-svgrepo-com.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </VBox>
+            <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="body" spacing="10">
+                <Canvas fx:id="canvas" width="1400" height="700"/>
+            </VBox>
+        </children>
+    </GridPane>
+
+</AnchorPane>
